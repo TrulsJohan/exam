@@ -13,12 +13,45 @@
     font-family: 'Poppins', sans-serif;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
 main {
     margin: 0;
     padding: 0;
 }
 
-a {
+ul, li, a {
     text-decoration: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header, footer {
+    cursor: pointer;
+}
+
+/* Small (sm) */
+@media (min-width: 640px) {
+}
+
+/* Medium (md) tablet */
+@media (min-width: 744px) {
+}
+
+/* Large (lg) */
+@media (min-width: 1024px) {
+}
+
+/* xLarge (xl) desktop */
+@media (min-width: 1280px) {
+}
+
+/* xxLarge (xxl) */
+@media (min-width: 1536px) {
 }
 

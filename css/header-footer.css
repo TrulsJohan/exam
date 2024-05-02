@@ -1,2 +1,40 @@
 @import "components.css";
 
+.navbar, .footer {
+    display: flex;
+    align-items: center;
+}
+
+.navbar {
+    background-color: var(--primory);
+    justify-content: space-between;
+    padding: 1rem 24px;
+}
+
+.footer {
+    background-color: var(--primory);
+    justify-content: center;
+    padding: 24px;
+}
+
+footer ul, li {
+    text-align: center;
+    color: var(--white);
+    text-decoration: underline;
+    font-size: 24px;
+}
+
+/* Medium (md) tablet */
+@media (min-width: 744px) {
+    .navbar {
+        padding: 1rem 40px;
+    }
+}
+
+/* xLarge (xl) desktop */
+@media (min-width: 1280px) {
+    .navbar {
+        padding: 1rem 70px;
+    }
+}
+
