@@ -5,6 +5,10 @@ main {
     padding: 24px;
 }
 
+.filter-container {
+    width: 272px;
+}
+
 .filter-container, .search-container {
     display: flex;
     justify-content: space-between;
