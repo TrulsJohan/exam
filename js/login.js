@@ -1,8 +1,11 @@
 const loginBtn = document.querySelector(".login-btn");
 
-let accsessToken = [];
+let authData = {};
 
 function login() {
+
+    event.preventDefault();
+
     fetch("https://v2.api.noroff.dev/auth/login", {
         method: "POST",
         headers: {
@@ -22,14 +25,16 @@ function login() {
     .then((data) => {
         console.log(data);
         const accessToken = data.data.accessToken;
-        localStorage.setItem('accessToken', accessToken);
-        window.location.href = '../index.html';
+        const username = data.data.name;
+        authData.accessToken = accessToken;
+        authData.username = username;
+        localStorage.setItem('authData', JSON.stringify(authData));
+        window.location.href = 'index.html';
     })
     .catch((error) => {
         console.error('Error during login:', error);
         alert("Could not login. Please try again later.");
     });
-    event.preventDefault();
 };
 
 loginBtn.addEventListener("click", login);  
