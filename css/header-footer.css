@@ -11,6 +11,17 @@
     padding: 1rem 24px;
 }
 
+.profile {
+    display: none;
+}
+
+.new-post-btn {
+    display: none;
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+}
+
 .footer {
     background-color: var(--primory);
     justify-content: center;
