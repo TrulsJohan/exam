@@ -32,5 +32,5 @@ function login() {
     event.preventDefault();
 };
 
-loginBtn.addEventListener("click", login); 
+loginBtn.addEventListener("click", login);  
 
