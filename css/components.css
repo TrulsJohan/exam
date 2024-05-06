@@ -31,6 +31,10 @@ ul, li, a {
     margin: 0;
 }
 
+a {
+    color: var(--white);
+}
+
 h2, h3, p {
     margin: 0;
     padding: 0;
