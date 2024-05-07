@@ -16,9 +16,11 @@ function post() {
         body: JSON.stringify({
             title: document.querySelector(".title-input").value,
             body: document.querySelector(".content-input").value,
-            url: document.querySelector(".img-input").value,
-        }),
-    })
+            media: {
+                  url: document.querySelector(".img-input").value,
+                },
+        })
+    })   
     .then((response) => {
         if (!response.ok) {
             throw new Error('Network response was not ok');
