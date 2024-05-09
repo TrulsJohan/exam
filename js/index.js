@@ -1,6 +1,6 @@
 const newPostBtn = document.querySelector(".new-post-btn");
 const profile = document.querySelector(".profile");
-const blogContainer = document.querySelector(".blog-container");
+const blogsContainer = document.querySelector(".blogs-container");
 
 
 function authAccess (){
@@ -42,17 +42,19 @@ function fetchBlogs (){
 }
 
 function renderBlogs(result) {
-    blogContainer.innerHTML = "";
+    blogsContainer.innerHTML = "";
     for (let index = 0; index < result.data.length; index++) {
-        blogContainer.innerHTML +=
+        blogsContainer.innerHTML +=
         `
-        <div class="blog-post">
-            <div class="blog-img">img</div>
-            <div class="blog-info-container">
-                <h3>${result.data[index].title}</h3>
-                <p>${result.data[index].updated}</p>
+        <a href="blog.html?id=${result.data[index].id}">
+            <div class="blog-post>
+                <div class="blog-img">img</div>
+                <div class="blog-info-container">
+                    <h3>${result.data[index].title}</h3>
+                    <p>${result.data[index].updated}</p>
+                </div>
             </div>
-        </div>
+        </a>
         `  
     }
 }
