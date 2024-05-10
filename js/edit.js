@@ -55,7 +55,7 @@ function fetchBlog(authData) {
         })
 }
 
-function saveChanges (){
+function saveChanges (authData, dataBlog){
     fetch(`https://v2.api.noroff.dev/blog/posts/${authData.username}/${dataBlog.id}`, {
         method: "PUT",
         headers: {
@@ -78,6 +78,7 @@ function saveChanges (){
     })
     .then((data) => {
         console.log(data);
+        window.location.href = `blog.html?id=${dataBlog.id}`;
     })
     .catch((error) => {
         console.error('Error during authentication:', error);
@@ -110,7 +111,7 @@ function deletePost (dataBlog, authData){
     event.preventDefault();
 }
 
-saveBtn.addEventListener("click", () => saveChanges(authData));
+saveBtn.addEventListener("click", () => saveChanges(authData, dataBlog));
 cancelBtn.addEventListener("click", ()=> window.location.href = `blog.html?id=${dataBlog.id}`);
 deleteBtn.addEventListener("click", ()=> deletePost(dataBlog, authData));
 

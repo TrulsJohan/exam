@@ -23,7 +23,6 @@
 .blog-img {
     width: 100vw;
     height: 200px;
-    background-color: var(--gray);
 }
 
 .blog-content {

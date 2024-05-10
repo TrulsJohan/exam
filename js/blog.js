@@ -52,7 +52,9 @@ function renderBlog(result) {
     blogContainer.innerHTML =
         `
     <div class="blog-content">
-        <div class="blog-img"></div>
+        <div>
+            <img class="blog-img" src="${dataBlog.media.url}" alt="${dataBlog.title}">
+        </div>
         <h1 class="blog-title">${dataBlog.title}</h1>
         <p class="blog-updated">${dataBlog.updated}</p>
         <p class="blog-body">${dataBlog.body}</p>
