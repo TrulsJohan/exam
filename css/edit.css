@@ -49,7 +49,7 @@ h3 {
     padding-top: 24px;
 }
 
-.delete-btn, .save-btn {
+.cancel-btn, .save-btn {
     height: 40px;
     width: 102px;
     border-style: none;
@@ -59,11 +59,22 @@ h3 {
     color: var(--white);
 }
 
-.delete-btn {
+.cancel-btn, .delete-btn {
     background-color: var(--red);
 }
 
 .save-btn {
     background-color: var(--green);
+}
+
+.delete-btn {
+    margin-top: 24px;
+    height: 40px;
+    width: 224px;
+    border-style: none;
+    border-radius: 1rem;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--white);
 }
 

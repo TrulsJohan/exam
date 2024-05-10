@@ -29,6 +29,7 @@ function post() {
     })
     .then((data) => {
         console.log(data);
+        window.location.href = `index.html`;
     })
     .catch((error) => {
         console.error('Error during authentication:', error);
