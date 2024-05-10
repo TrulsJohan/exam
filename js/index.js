@@ -48,14 +48,17 @@ function renderBlogs(result) {
         `
         <a href="blog.html?id=${result.data[index].id}">
             <div class="blog-post>
-                <div class="blog-img">img</div>
+                <div class="img-container">
+                    <img class="blog-img" src="${result.data[index].media.url}" alt="${result.data[index].title}">
+                </div>
                 <div class="blog-info-container">
                     <h3>${result.data[index].title}</h3>
                     <p>${result.data[index].updated}</p>
                 </div>
             </div>
         </a>
-        `  
+        ` 
+        console.log(result.data[index].media.url)
     }
 }
 

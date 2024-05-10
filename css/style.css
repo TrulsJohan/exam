@@ -112,14 +112,15 @@ main {
     margin: 1rem 0;
 }
 
+.img-container {
+    height: 100px;
+    width: 224px;
+}
+
 .blog-img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 1rem 1rem 0 0;
-    background-color: var(--gray);
     height: 112px;
     width: 224px;
+    border-radius: 1rem 1rem 0 0;
 }
 
 .blog-info-container {
