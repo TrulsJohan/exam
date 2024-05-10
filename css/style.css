@@ -79,6 +79,12 @@ main {
     height: 264px;
 }
 
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .prev-next {
     display: flex;
     align-items: center;

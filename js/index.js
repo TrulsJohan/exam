@@ -1,7 +1,9 @@
 const newPostBtn = document.querySelector(".new-post-btn");
 const profile = document.querySelector(".profile");
 const blogsContainer = document.querySelector(".blogs-container");
-
+const carouselContainer = document.querySelector(`.carousel`);
+const nextBtn = document.querySelector(`.next`);
+const prevBtn = document.querySelector(`.prev`);
 
 function authAccess (){
     const authDataString = localStorage.getItem('authData');
@@ -42,26 +44,63 @@ function fetchBlogs (){
 }
 
 function renderBlogs(result) {
-    blogsContainer.innerHTML = "";
-    for (let index = 0; index < result.data.length; index++) {
-        blogsContainer.innerHTML +=
-        `
-        <a href="blog.html?id=${result.data[index].id}">
-            <div class="blog-post>
-                <div class="img-container">
-                    <img class="blog-img" src="${result.data[index].media.url}" alt="${result.data[index].title}">
-                </div>
-                <div class="blog-info-container">
-                    <h3>${result.data[index].title}</h3>
-                    <p>${result.data[index].updated}</p>
-                </div>
-            </div>
-        </a>
-        ` 
-        console.log(result.data[index].media.url)
-    }
-}
+    const latestPosts = result.data.slice(0, 3);
+    const remainingPosts = result.data.slice(3);
 
+    // Function to generate HTML for displaying a single blog post
+    function generateBlogHTML(post, isHidden = false) {
+        const displayStyle = isHidden ? 'style="display: none;"' : '';
+        return `
+            <div class="blog-post" ${displayStyle} data-id="${post.id}">
+                <a href="blog.html?id=${post.id}">
+                    <div class="img-container">
+                        <img class="blog-img" src="${post.media.url}" alt="${post.title}">
+                    </div>
+                    <div class="blog-info-container">
+                        <h3>${post.title}</h3>
+                        <p>${post.updated}</p>
+                    </div>
+                </a>
+            </div>
+        `;
+    }
+
+    // Render latest posts in the carousel container
+    latestPosts.forEach((post, index) => {
+        if (index === 0) {
+            carouselContainer.innerHTML += generateBlogHTML(post);
+        } else {
+            carouselContainer.innerHTML += generateBlogHTML(post, true);
+        }
+    });
+
+    // Attach event listener to the carousel post to redirect to blog.html
+    const carouselPost = carouselContainer.querySelector(".blog-post");
+    carouselPost.addEventListener("click", () => {
+        window.location.href = `blog.html?id=${carouselPost.dataset.id}`;
+    });
+
+    // Render remaining posts in the blogs container
+    remainingPosts.slice(0, 6).forEach((post) => {
+        blogsContainer.innerHTML += generateBlogHTML(post);
+    });
+
+    // Carousel animation for next button
+    nextBtn.addEventListener("click", () => {
+        const carouselPosts = carouselContainer.querySelectorAll(".blog-post");
+        carouselPosts[0].style.display = `none`;
+        carouselContainer.appendChild(carouselPosts[0]);
+        carouselPosts[1].style.display = `block`;
+    });
+
+    // Carousel animation for previous button
+    prevBtn.addEventListener("click", () => {
+        const carouselPosts = carouselContainer.querySelectorAll(".blog-post");
+        carouselPosts[1].style.display = `none`;
+        carouselContainer.insertBefore(carouselPosts[carouselPosts.length - 1], carouselPosts[0]);
+        carouselPosts[0].style.display = `block`;
+    });
+}
 
 authAccess();
 fetchBlogs();
