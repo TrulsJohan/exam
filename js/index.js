@@ -142,7 +142,6 @@ function searchBlogs(searchTerm) {
     }
 }
 
-
 filterDropdown.addEventListener("change", () => {
     if (filterDropdown.value === "All Blogs") {
         renderBlogs(blogs);
