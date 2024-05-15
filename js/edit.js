@@ -1,5 +1,6 @@
 const profile = document.querySelector(`.profile`);
 const inputTitle = document.querySelector(`.title-input`);
+const inputTags = document.querySelector(`.tags-input`);
 const inputContent = document.querySelector(`.content-input`);
 const inputImg = document.querySelector(`.img-input`);
 const deleteBtn = document.querySelector(`.delete-btn`);
@@ -48,6 +49,7 @@ function fetchBlog(authData) {
             inputTitle.value = dataBlog.title;
             inputContent.value = dataBlog.body;
             inputImg.value = dataBlog.media.url;
+            inputTags.value = dataBlog.tags;
         })
         .catch((error) => {
             console.error('Error during fetch:', error);
@@ -65,6 +67,7 @@ function saveChanges (authData, dataBlog){
         body: JSON.stringify({
             title: inputTitle.value,
             body: inputContent.value,
+            tags: inputTags.value,
             media: {
                 url: inputImg.value,
             },

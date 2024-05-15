@@ -36,9 +36,12 @@
                 <input type="text" id="search-input" class="search-input searchbar" placeholder="Search...">
             </div>
 
-            <button class="filter-btn">
-                <img class="filter.img" src="assets/img/filter.svg" alt="filter">
-            </button>
+            <button class="reset-filter">Reset</button>
+            <label for="filter-dropdown">
+                <select class="filter-dropdown" id="filter-dropdown">
+                    <option value="default" disabled selected>All Blogs</option>
+                </select>
+            </label>
         </div>
         
         <div class="content">

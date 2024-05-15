@@ -16,6 +16,7 @@ function post() {
         body: JSON.stringify({
             title: document.querySelector(".title-input").value,
             body: document.querySelector(".content-input").value,
+            tags: [document.querySelector(".tags-input").value],
             media: {
                   url: document.querySelector(".img-input").value,
                 },

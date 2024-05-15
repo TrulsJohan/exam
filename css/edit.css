@@ -43,6 +43,10 @@ h3 {
     height: 40px;
 }
 
+.tags-input {
+    height: 40px;
+}
+
 .btn-container {
     display: flex;
     justify-content: space-between;
