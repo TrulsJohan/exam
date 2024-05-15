@@ -2,6 +2,7 @@ const newPostBtn = document.querySelector(".new-post-btn");
 const profile = document.querySelector(".profile");
 const filterDropdown = document.querySelector(`.filter-dropdown`);
 const resetFilter = document.querySelector(`.reset-filter`);
+const inputSearch = document.querySelector(`.search-input`);
 const blogsContainer = document.querySelector(".blogs-container");
 const carouselContainer = document.querySelector(`.carousel`);
 const nextBtn = document.querySelector(`.next`);
@@ -128,6 +129,20 @@ function filterBlogs(filterValue) {
     });
 }
 
+function searchBlogs(searchTerm) {
+    searchTerm = searchTerm.toLowerCase().trim(); // Get the search term and convert it to lowercase
+    if (searchTerm === '') {
+        renderBlogs(blogs); // If the search term is empty, display all blogs
+    } else {
+        const filteredBlogs = blogs.data.filter(post => post.title.toLowerCase().includes(searchTerm)); // Filter blogs whose title includes the search term
+        blogsContainer.innerHTML = ''; // Clear existing blogs in blogsContainer
+        filteredBlogs.forEach(post => {
+            blogsContainer.innerHTML += generateBlogHTML(post);
+        });
+    }
+}
+
+
 filterDropdown.addEventListener("change", () => {
     if (filterDropdown.value === "All Blogs") {
         renderBlogs(blogs);
@@ -141,6 +156,10 @@ resetFilter.addEventListener("click", () => {
     blogsContainer.innerHTML = '';
     filterDropdown.innerHTML = `<option value="default" disabled selected>All Blogs</option>`;
     renderBlogs(blogs);
+});
+
+inputSearch.addEventListener("input", () => {
+    searchBlogs(inputSearch.value);
 });
 
 authAccess();
