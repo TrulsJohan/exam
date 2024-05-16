@@ -91,18 +91,15 @@ function renderBlogs(result) {
         }
     });
 
-    // Attach event listener to the carousel post to redirect to blog.html
     const carouselPost = carouselContainer.querySelector(".blog-post");
     carouselPost.addEventListener("click", () => {
         window.location.href = `blog.html?id=${carouselPost.dataset.id}`;
     });
 
-    // Render remaining posts in the blogs container
     remainingPosts.slice(0, 6).forEach((post) => {
         blogsContainer.innerHTML += generateBlogHTML(post);
     });
 
-    // Carousel animation for next button
     nextBtn.addEventListener("click", () => {
         const carouselPosts = carouselContainer.querySelectorAll(".blog-post");
         carouselPosts[0].style.display = `none`;
@@ -110,7 +107,6 @@ function renderBlogs(result) {
         carouselPosts[1].style.display = `block`;
     });
 
-    // Carousel animation for previous button
     prevBtn.addEventListener("click", () => {
         const carouselPosts = carouselContainer.querySelectorAll(".blog-post");
         carouselPosts[1].style.display = `none`;
@@ -120,7 +116,7 @@ function renderBlogs(result) {
 }
 
 function filterBlogs(filterValue) {
-    blogsContainer.innerHTML = ''; // Clear existing blogs
+    blogsContainer.innerHTML = '';
 
     blogs.data.forEach(post => {
         if (post.tags.includes(filterValue) || filterValue === 'All Blogs') {
@@ -130,15 +126,29 @@ function filterBlogs(filterValue) {
 }
 
 function searchBlogs(searchTerm) {
-    searchTerm = searchTerm.toLowerCase().trim(); // Get the search term and convert it to lowercase
-    if (searchTerm === '') {
-        renderBlogs(blogs); // If the search term is empty, display all blogs
-    } else {
-        const filteredBlogs = blogs.data.filter(post => post.title.toLowerCase().includes(searchTerm)); // Filter blogs whose title includes the search term
-        blogsContainer.innerHTML = ''; // Clear existing blogs in blogsContainer
-        filteredBlogs.forEach(post => {
-            blogsContainer.innerHTML += generateBlogHTML(post);
-        });
+    searchTerm = searchTerm.toLowerCase().trim(); 
+    const filteredBlogs = blogs.data.filter(post => post.title.toLowerCase().includes(searchTerm));
+    renderSearch(filteredBlogs); 
+    console.log(filteredBlogs);
+}
+
+function renderSearch (filteredBlogs){
+    blogsContainer.innerHTML = '';
+    for(let index = 0; index < filteredBlogs.length; index++){
+        blogsContainer.innerHTML +=
+        `
+        <div class="blog-post" data-id="${filteredBlogs[index].id}">
+            <a href="blog.html?id=${filteredBlogs[index].id}">
+                <div class="img-container">
+                    <img class="blog-img" src="${filteredBlogs[index].media.url}" alt="${filteredBlogs[index].title}">
+                </div>
+                <div class="blog-info-container">
+                    <h3>${filteredBlogs[index].title}</h3>
+                    <p>${filteredBlogs[index].updated}</p>
+                </div>
+            </a>
+        </div>
+        `
     }
 }
 
