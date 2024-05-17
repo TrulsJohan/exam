@@ -1,0 +1,91 @@
+:root {
+    --surface50: #FFFFFF;
+    --surface200: #ECEDEE;
+    --surface800: #33383D;
+    --surface900: #202327;
+    --primory200: #FFDDBE;
+
+    --light: 300;
+    --regular: 400;
+    --medium: 500;
+    --semi-bold: 600;
+    --bold: 700;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body, header, main, footer {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+ul, li, a {
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.display1, .display2, .display3, .display4, .display5, .display6 {
+    font-family: "Anek Latin", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.display1 {font-size: 72px; line-height: 80px;}
+.display2 {font-size: 68px; line-height: 76px;}
+.display3 {font-size: 64px; line-height: 72px;}
+.display4 {font-size: 60px; line-height: 68px;}
+.display5 {font-size: 56px; line-height: 64px;}
+.display6 {font-size: 52px; line-height: 60px;}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Anek Latin", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {font-size: 48px; line-height: 56px;}
+h2 {font-size: 44px; line-height: 52px;}
+h3 {font-size: 40px; line-height: 48px;}
+h4 {font-size: 36px; line-height: 44px;}
+h5 {font-size: 32px; line-height: 40px;}
+h6 {font-size: 28px; line-height: 36px;}
+
+label {
+    font-family: "Anek Latin", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.label-l {font-size: 24px; line-height: 32px;}
+.label-m {font-size: 20px; line-height: 28px;}
+.label-s {font-size: 16px; line-height: 24px;}
+.label-xs {font-size: 12px; line-height: 20px;}
+
+p {
+    font-family: 'Aileron', sans-serif;                                             
+    margin: 0;
+    padding: 0;
+}
+
+.paragraph-l {font-size: 24px; line-height: 32px;}
+.paragraph-m {font-size: 20px; line-height: 28px;}
+.paragraph-s {font-size: 16px; line-height: 24px;}
+.paragraph-xs {font-size: 12px; line-height: 20px;}
+
+@media (min-width: 320px) {
+}
+
+@media (min-width: 744px) {
+}
+
+@media (min-width: 1280px) {
+}
+
+@media (min-width: 1920px) {
+}
+
