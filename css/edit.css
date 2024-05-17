@@ -1,33 +1,48 @@
-@import "components.css";
-@import "header-footer.css";
+@import "./primetives.css";
+@import "./header-footer.css";
 
-main {
-    padding: 24px;
+.section-one {
+    background-color: var(--surface900);
+}
+
+.prev-page-container {
+    padding: 24px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.prev-page-text {
+    color: var(--surface50);
+}
+
+.section-two {
+    background-color: var(--surface900);
 }
 
 .form-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--background);
-    border-radius: 1rem;
-    padding: 24px;
-    width: 272px;
+    padding: 0 24px;
+}
+
+h6 {
+    color: var(--surface50);
 }
 
 .edit {
     width: 100%;
 }
 
-h3 {
+.input-headers {
     padding: 24px 0 8px 0;
+    color: var(--primory200);
 }
 
 .input {
-    background-color: var(--white);
-    border: 1px solid var(--gray);
-    border-radius: 1rem;
+    background-color: var(--surface800);
+    color: var(--surface50);
+    border: 1px solid var(--surface50);
     width: 100%;
 }
 
@@ -49,36 +64,26 @@ h3 {
 
 .btn-container {
     display: flex;
-    justify-content: space-between;
-    padding-top: 24px;
+    padding: 24px 0 32px 0;
+    gap: 24px;
 }
 
-.cancel-btn, .save-btn {
+.delete-btn, .save-btn {
     height: 40px;
-    width: 102px;
-    border-style: none;
-    border-radius: 1rem;
+    width: 100%;
     font-weight: 700;
     font-size: 1rem;
-    color: var(--white);
 }
 
-.cancel-btn, .delete-btn {
-    background-color: var(--red);
+.delete-btn  {
+    background-color: transparent;
+    border: 1px solid var(--primory200);
+    color: var(--primory200);
 }
 
 .save-btn {
-    background-color: var(--green);
-}
-
-.delete-btn {
-    margin-top: 24px;
-    height: 40px;
-    width: 224px;
-    border-style: none;
-    border-radius: 1rem;
-    font-weight: 700;
-    font-size: 1rem;
-    color: var(--white);
+    background-color: var(--primory200);
+    border: none;
+    color: var(--surface900);
 }
 

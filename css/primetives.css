@@ -22,6 +22,10 @@ body, header, main, footer {
     width: 100%;
 }
 
+.section {
+    width: 100%;
+}
+
 ul, li, a {
     text-decoration: none;
     list-style: none;

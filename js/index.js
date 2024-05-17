@@ -1,5 +1,5 @@
 const newPostBtn = document.querySelector(".new-post-btn");
-const profile = document.querySelector(".profile");
+const logOut = document.querySelector(".log-out");
 const filterDropdown = document.querySelector(`.filter-dropdown`);
 const resetFilter = document.querySelector(`.reset-filter`);
 const inputSearch = document.querySelector(`.search-input`);
@@ -17,14 +17,14 @@ function authAccess() {
         const authData = JSON.parse(authDataString);
         if (authData.accessToken) {
             newPostBtn.style.display = "block";
-            profile.style.display = "block";
+            logOut.style.display = "block";
         } else {
             newPostBtn.style.display = "none";
-            profile.style.display = "none";
+            logOut.style.display = "none";
         }
     } else {
         newPostBtn.style.display = "none";
-        profile.style.display = "none";
+        logOut.style.display = "none";
     }
 }
 
@@ -58,10 +58,9 @@ function generateBlogHTML(post, isHidden = false) {
             <a href="blog.html?id=${post.id}">
                 <div class="img-container">
                     <img class="blog-img" src="${post.media.url}" alt="${post.title}">
-                </div>
-                <div class="blog-info-container">
-                    <h3>${post.title}</h3>
-                    <p>${post.updated}</p>
+                    <div class="title-container">
+                        <p class="label-s blog-title">${post.title}</p>
+                    </div>
                 </div>
             </a>
         </div>
@@ -141,10 +140,9 @@ function renderSearch (filteredBlogs){
             <a href="blog.html?id=${filteredBlogs[index].id}">
                 <div class="img-container">
                     <img class="blog-img" src="${filteredBlogs[index].media.url}" alt="${filteredBlogs[index].title}">
-                </div>
-                <div class="blog-info-container">
-                    <h3>${filteredBlogs[index].title}</h3>
-                    <p>${filteredBlogs[index].updated}</p>
+                    <div class="title-container">
+                        <p class="label-s blog-title">${filteredBlogs[index].title}</p>
+                    </div>
                 </div>
             </a>
         </div>

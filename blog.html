@@ -16,24 +16,34 @@
 
 <body>
     <header>
-        <nav class="navbar">
+        <nav>
             <a href="index.html">
-                <img src="assets/img/logo.svg" alt="logo">
+                <p class="label-l logo">Técho</p>
             </a>
-            <img class="profile" src="assets/img/profile.svg" alt="profile">
+            <div class="nav-container">
+                <p class="label-s log-out">Log out</p>
+                <a href="make.html">
+                    <div class="new-post-btn">
+                        <img class="new-post-img" src="assets/img/plus.svg" alt="new-post">
+                    </div>
+                </a>
+            </div>
         </nav>
     </header>
     
     <main>
-        <div class="banner">
+        <section class="section section-one">
             <a href="index.html">
-                <img class="prev-img" src="assets/img/prev-page-btn.svg" alt="previous">
+                <div class="prev-page-container">
+                    <img src="assets/img/prev-page.svg" alt="previous-page">
+                    <p class="label-xs prev-page-text">Previous page</p>
+                </div>
             </a>
-        </div>
-        <div class="blog-container"></div>
-        <div class="btn-container">
-            <button class="edit-post">Edit post</button>
-        </div>
+        </section>
+
+        <section class="section section-two">
+            <div class="blog-container"></div>
+        </section>
     </main>
     
     <footer>

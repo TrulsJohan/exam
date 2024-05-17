@@ -16,42 +16,57 @@
 
 <body>
     <header>
-        <nav class="navbar">
+        <nav>
             <a href="index.html">
-                <img src="assets/img/logo.svg" alt="logo">
+                <p class="label-l logo">Técho</p>
             </a>
-            <img class="profile" src="assets/img/profile.svg" alt="profile">
+            <div class="nav-container">
+                <p class="label-s log-out">Log out</p>
+                <a href="make.html">
+                    <div class="new-post-btn">
+                        <img class="new-post-img" src="assets/img/plus.svg" alt="new-post">
+                    </div>
+                </a>
+            </div>
         </nav>
-        <a class="new-post-btn" href="make.html">
-            <img src="assets/img/new-post-btn.svg" alt="new post">
-        </a>
     </header>
     
     <main>
-        <div class="form-container">
-            <h2>Edit post</h2>
-            <div class="edit">
-                <h3>Title</h3>
-                <input type="text" id="title" class="title-input input">
-                <h3>Content</h3>
-                <input type="text" id="content" class="content-input input">
-                <h3>Tags</h3>
-                <input type="text" id="content" class="tags-input input">
-                <h3>Image</h3>
-                <input type="url" id="img-input" class="img-input input">
-                <div class="btn-container">
-                    <button class="cancel-btn">
-                        Cancel
-                    </button>
-                    <button class="save-btn">
-                        Save
-                    </button>
+        <section class="section section-one">
+            <a href="index.html">
+                <div class="prev-page-container">
+                    <img src="assets/img/prev-page.svg" alt="previous-page">
+                    <p class="label-xs prev-page-text">Previous page</p>
                 </div>
-                <button class="delete-btn">
-                    Delete
-                </button>
+            </a>
+        </section>
+
+        <section class="section section-two">
+            <div class="form-container">
+                <h6>
+                    Edit Old</br>
+                    Hometech Post
+                </h6>
+                <div class="edit">
+                    <p class="label-s input-headers">Title</p>
+                    <input type="text" id="title" class="title-input input">
+                    <p class="label-s input-headers">Content</p>
+                    <input type="text" id="content" class="content-input input">
+                    <p class="label-s input-headers">Tags</p>
+                    <input type="text" id="content" class="tags-input input">
+                    <p class="label-s input-headers">Image url</p>
+                    <input type="url" id="img-input" class="img-input input">
+                    <div class="btn-container">
+                        <button class="delete-btn">
+                            Delete
+                        </button>
+                        <button class="save-btn">
+                            Save
+                        </button>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
     </main>
     
     <footer>

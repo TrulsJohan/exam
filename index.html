@@ -20,53 +20,111 @@
 
 <body>
     <header>
-        <nav class="navbar">
+        <nav>
             <a href="index.html">
-                <img src="assets/img/logo.svg" alt="logo">
+                <p class="label-l logo">Técho</p>
             </a>
-            <img class="profile" src="assets/img/profile.svg" alt="profile">
+            <div class="nav-container">
+                <p class="label-s log-out">Log out</p>
+                <a href="make.html">
+                    <div class="new-post-btn">
+                        <img class="new-post-img" src="assets/img/plus.svg" alt="new-post">
+                    </div>
+                </a>
+            </div>
         </nav>
-        <a class="new-post-btn" href="make.html">
-            <img src="assets/img/new-post-btn.svg" alt="new post">
-        </a>
     </header>
-    
+
     <main>
-        <div class="filter-container">          
+        <section class="section section-one">
+            <div>
+                <p class="paragraph-xs sub-headline">
+                    The future generation of home tech,</br>
+                    takes us to new times of greatness.
+                </p>
+                <div class="headline-container">
+                    <h2 class="headline">
+                        FUTURE</br>
+                        HOMETECH</br>
+                        GENERATION</br>
+                    </h2>
+                    <h2 class="headline-bg">
+                        FUTURE</br>
+                        HOMETECH</br>
+                        GENERATION</br>
+                    </h2>
+                    <div class="square-one"></div>
+                    <div class="square-two"></div>
+                </div>
+                <div class="group-img-container">
+                    <div class="group-logo-bg">
+                        <img src="assets/img/group-img-logo.svg" alt="img">
+                    </div>
+                    <img src="assets/img/group-eclipse.svg" alt="eclipse">
+                    <img src="assets/img/group-eclipse.svg" alt="eclipse">
+                    <img src="assets/img/group-eclipse.svg" alt="eclipse">
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-two">
+            <div class="arrow-container">
+                <p class="label-xs down-arrow">Latest</p>
+                <img src="assets/img/arrow-down.svg" alt="arrow-down">
+            </div>
+        </section>
+
+        <section class="section section-three">
+            <div class="headline-latest-container">
+                <h6 class="headline-latest">
+                    Check Out the</br>
+                    Latest Home Tech
+                </h6>
+                <p class="paragraph-s sub-headline-latest">
+                    Latest and up to date tech.
+                </p>
+            </div>
+        </section>
+
+        <section class="section section-four">
+            <div class="prev-next-container">
+                <div class="prev-next-bg">
+                    <img class="prev-arrow prev" src="assets/img/previous-arrow.svg" alt="previous">  
+                </div>
+                <div class="prev-next-bg">
+                    <img class="next-arrow next" src="assets/img/next-arrow.svg" alt="previous">
+                </div>
+            </div>
+            <div class="carousel"></div>
+        </section>
+
+        <section class="section section-two">
+            <div class="arrow-container">
+                <p class="label-xs down-arrow">All Blogs</p>
+                <img src="assets/img/arrow-down.svg" alt="arrow-down">
+            </div>
+        </section>
+
+        <section class="section section-six">
             <div class="search-container">
                 <div class="search-btn searchbar">
                     <img src="assets/img/search.svg" alt="search">
                 </div>
                 <input type="text" id="search-input" class="search-input searchbar" placeholder="Search...">
             </div>
-
-            <button class="reset-filter">Reset</button>
-            <label for="filter-dropdown">
-                <select class="filter-dropdown" id="filter-dropdown">
-                    <option value="default" disabled selected>All Blogs</option>
-                </select>
-            </label>
-        </div>
-        
-        <div class="content">
-            <h2>Latest released</h2>
-            <div class="carousel-container">
-                <div class="carousel"></div>
-                <div class="prev-next">
-                    <div class="prev">
-                        <img src="assets/img/previous.svg" alt="previous">
-                    </div>
-                    <div class="dots"></div>
-                    <div class="dots"></div>
-                    <div class="dots"></div>
-                    <div class="next">
-                        <img src="assets/img/next.svg" alt="next">
-                    </div>
-                </div>
+            <div class="filter-container"> 
+                <button class="label-xs reset-filter">Reset</button>
+                <label for="filter-dropdown">
+                    <select class="filter-dropdown" id="filter-dropdown">
+                        <option value="default" disabled selected>All Blogs</option>
+                    </select>
+                </label>
             </div>
-            <h2>Other posts</h2>
+        </section>
+
+        <section class="section section-seven">
             <div class="blogs-container"></div>
-        </div>
+        </section>
     </main>
     
     <footer>
