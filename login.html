@@ -16,31 +16,50 @@
 
 <body>
     <header>
-        <nav class="navbar">
+        <nav>
             <a href="index.html">
-                <img src="assets/img/logo.svg" alt="logo">
+                <p class="label-l logo">Técho</p>
             </a>
-            <img class="profile" src="assets/img/profile.svg" alt="profile">
+            <div class="nav-container">
+                <p class="label-s log-out">Log out</p>
+                <a href="make.html">
+                    <div class="new-post-btn">
+                        <img class="new-post-img" src="assets/img/plus.svg" alt="new-post">
+                    </div>
+                </a>
+            </div>
         </nav>
-        <a class="new-post-btn" href="make.html">
-            <img src="assets/img/new-post-btn.svg" alt="new post">
-        </a>
     </header>
 
     <main>
-        <div class="login-container">
-            <h2>Login</h2>
-            <form class="login-form">
-                <h3>Email</h3>
-                <input type="email" id="email" class="email input">
-                <h3>Password</h3>
-                <input type="password" id="password" class="password input">
-                <button type="submit" class="login-btn">Login</button>
-            </form>
-            <a href="register.html">
-                <p>Register new account!</p>
-            </a>
-        </div>
+        <section class="section section-one">
+            <div class="header-container">
+                <h6>
+                    Register New </br>
+                    Admin account
+                </h6>
+                <div class="group-img-container">
+                    <div class="group-logo-bg">
+                        <img src="assets/img/group-img-logo.svg" alt="img">
+                    </div>
+                    <img src="assets/img/group-eclipse.svg" alt="eclipse">
+                    <img src="assets/img/group-eclipse.svg" alt="eclipse">
+                    <img src="assets/img/group-eclipse.svg" alt="eclipse">
+                </div>
+            </div>
+            <div class="login-container">
+                <form class="login-form">
+                    <p class="label-s input-header">Email</p>
+                    <input type="email" id="email" class="email input">
+                    <p class="label-s input-header">Password</p>
+                    <input type="password" id="password" class="password input">
+                    <button type="submit" class="login-btn">Login</button>
+                </form>
+                <a href="register.html">
+                    <p class="paragraph-xs register-link">Register new account!</p>
+                </a>
+            </div>
+        </section>
     </main>
     
     <footer>

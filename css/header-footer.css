@@ -1,51 +1,53 @@
-@import "components.css";
+@import "./primetives.css";
 
-.navbar, .footer {
+nav {
+    background-color: var(--surface900);
     display: flex;
-    align-items: center;
-}
-
-.navbar {
-    background-color: var(--primory);
     justify-content: space-between;
-    padding: 1rem 24px;
+    align-items: center;
+    padding: 16px 24px;
 }
 
-.profile {
-    display: none;
+.nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    color: var(--surface50);
+    font-weight: var(--bold);
+}
+
+.log-out {
+    color: var(--surface50);
+    cursor: pointer;
 }
 
 .new-post-btn {
-    display: none;
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    background-color: var(--primory200);
+}
+
+.new-post-img {
+    width: 24px;
+    height: 24px;
+    color: var(--surface50);
 }
 
 .footer {
-    background-color: var(--primory);
+    background-color: var(--surface900);
     justify-content: center;
-    padding: 24px;
+    padding: 32px 24px;
 }
 
 footer ul, li {
     text-align: center;
-    color: var(--white);
-    text-decoration: underline;
+    padding: 8px;
+    color: var(--surface50);
     font-size: 24px;
-}
-
-/* Medium (md) tablet */
-@media (min-width: 744px) {
-    .navbar {
-        padding: 1rem 40px;
-    }
-}
-
-/* xLarge (xl) desktop */
-@media (min-width: 1280px) {
-    .navbar {
-        padding: 1rem 70px;
-    }
 }
 

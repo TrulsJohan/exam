@@ -1,8 +1,27 @@
-@import "components.css";
-@import "header-footer.css";
+@import "./primetives.css";
+@import "./header-footer.css";
 
-main {
-    padding: 24px;
+.section-one {
+    background-color: var(--surface900);
+}
+
+.header-container {
+    padding: 32px 24px 0 24px;
+    color: var(--surface50);
+}
+
+.group-img-container {
+    display: flex;
+}
+
+.group-logo-bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primory200);
+    border-radius: 100%;
+    width: 48px;
+    height: 48px;
 }
 
 .register-container {
@@ -10,43 +29,46 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--background);
-    border-radius: 1rem;
-    padding: 24px;
-    width: 272px;
+    padding: 0 24px;
 }
 
 .register-form {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
-h3 {
+.input-header {
     padding: 24px 0 8px 0;
+    color: var(--primory200);
 }
 
 .input {
-    background-color: var(--white);
-    border: 1px solid var(--gray);
-    border-radius: 1rem;
+    background-color: var(--surface800);
+    border: 1px solid var(--surface50);
     height: 40px;
     width: 100%;
 }
 
 .terms-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 24px 0;
+    gap: 1rem;
+    width: 100%;
+}
+
+.terms {
+    color: var(--primory200);
+    padding: 0;
 }
 
 .checkbox {
     width: 24px;
     height: 24px;
-    background-color: var(--white);
-    border: 1px solid var(--gray);
-    border-radius: 1rem;
-    margin: 0 1rem 0 0;
+    background-color: var(--surface800);
+    border: 1px solid var(--surface50);
+    margin: 0;
 }
 
 .register-btn {
@@ -55,15 +77,15 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--green);
-    border-style: none;
-    border-radius: 1rem;
-    color: var(--white);
+    background-color: var(--primory200);
+    border: none;
+    color: var(--surface900);
     font-size: 1rem;
     font-weight: 700;
 }
 
-p {
+.login-link {
     padding-top: 1rem;
+    color: var(--primory200);
 }
 

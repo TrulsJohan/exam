@@ -51,15 +51,29 @@ function renderBlog(result) {
     console.log(dataBlog);
     blogContainer.innerHTML =
         `
-    <div class="blog-content">
-        <div>
+        <div class="blog-content">
+            <p class="blog-updated">${dataBlog.updated}</p>
+            <h6 class="blog-title">${dataBlog.title}</h6>
             <img class="blog-img" src="${dataBlog.media.url}" alt="${dataBlog.title}">
+            <div class="img-edit-container">
+                <div class="group-img-container">
+                    <div class="group-logo-bg">
+                        <img src="assets/img/group-img-logo.svg" alt="img">
+                    </div>
+                    <img src="assets/img/group-eclipse.svg" alt="eclipse">
+                    <img src="assets/img/group-eclipse.svg" alt="eclipse">
+                    <img src="assets/img/group-eclipse.svg" alt="eclipse">
+                </div>
+                <a href="../edit.html?id=${dataBlog.id}">
+                    <div class="edit-container">
+                        <img src="assets/img/edit.svg" alt="edit">
+                        <p class="label-xs">Edit post</p>
+                    </div>
+                </a>
+            </div>
+            <p class="paragraph-s blog-body">${dataBlog.body}</p>
         </div>
-        <h1 class="blog-title">${dataBlog.title}</h1>
-        <p class="blog-updated">${dataBlog.updated}</p>
-        <p class="blog-body">${dataBlog.body}</p>
-    </div>
-    `
+        `
 }
 
 authAccess();
