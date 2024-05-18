@@ -1,5 +1,4 @@
-const newPostBtn = document.querySelector(".new-post-btn");
-const logOut = document.querySelector(".log-out");
+const navContainer = document.querySelector(".nav-container");
 const filterDropdown = document.querySelector(`.filter-dropdown`);
 const resetFilter = document.querySelector(`.reset-filter`);
 const inputSearch = document.querySelector(`.search-input`);
@@ -7,24 +6,23 @@ const blogsContainer = document.querySelector(".blogs-container");
 const carouselContainer = document.querySelector(`.carousel`);
 const nextBtn = document.querySelector(`.next`);
 const prevBtn = document.querySelector(`.prev`);
+const seeMore = document.querySelector(`.see-more-btn`);
 
 const tagsArray = [];
 let blogs = [];
+let displayedBlogCount = 6;
 
 function authAccess() {
     const authDataString = localStorage.getItem('authData');
     if (authDataString) {
         const authData = JSON.parse(authDataString);
         if (authData.accessToken) {
-            newPostBtn.style.display = "block";
-            logOut.style.display = "block";
+            navContainer.style.display = "flex";
         } else {
-            newPostBtn.style.display = "none";
-            logOut.style.display = "none";
+            navContainer.style.display = "none";
         }
     } else {
-        newPostBtn.style.display = "none";
-        logOut.style.display = "none";
+        navContainer.style.display = "none";
     }
 }
 
@@ -50,7 +48,6 @@ function fetchBlogs() {
         })
 }
 
-// Function to generate HTML for displaying a single blog post
 function generateBlogHTML(post, isHidden = false) {
     const displayStyle = isHidden ? 'style="display: none;"' : '';
     return `
@@ -81,7 +78,6 @@ function renderBlogs(result) {
     const latestPosts = result.data.slice(0, 3);
     const remainingPosts = result.data.slice(3);
 
-    // Render latest posts in the carousel container
     latestPosts.forEach((post, index) => {
         if (index === 0) {
             carouselContainer.innerHTML += generateBlogHTML(post);
@@ -95,7 +91,7 @@ function renderBlogs(result) {
         window.location.href = `blog.html?id=${carouselPost.dataset.id}`;
     });
 
-    remainingPosts.slice(0, 6).forEach((post) => {
+    remainingPosts.slice(0, displayedBlogCount).forEach((post) => {
         blogsContainer.innerHTML += generateBlogHTML(post);
     });
 
@@ -131,23 +127,20 @@ function searchBlogs(searchTerm) {
     console.log(filteredBlogs);
 }
 
-function renderSearch (filteredBlogs){
+function renderSearch(filteredBlogs) {
     blogsContainer.innerHTML = '';
-    for(let index = 0; index < filteredBlogs.length; index++){
-        blogsContainer.innerHTML +=
-        `
-        <div class="blog-post" data-id="${filteredBlogs[index].id}">
-            <a href="blog.html?id=${filteredBlogs[index].id}">
-                <div class="img-container">
-                    <img class="blog-img" src="${filteredBlogs[index].media.url}" alt="${filteredBlogs[index].title}">
-                    <div class="title-container">
-                        <p class="label-s blog-title">${filteredBlogs[index].title}</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-        `
+    for (let index = 0; index < filteredBlogs.length; index++) {
+        blogsContainer.innerHTML += generateBlogHTML(filteredBlogs[index]);
     }
+}
+
+// Function to handle the "see more" functionality
+function seeMoreBlogs() {
+    const totalDisplayed = blogsContainer.children.length;
+    const additionalBlogs = blogs.data.slice(totalDisplayed, totalDisplayed + 6); // Load 6 more blogs
+    additionalBlogs.forEach(post => {
+        blogsContainer.innerHTML += generateBlogHTML(post);
+    });
 }
 
 filterDropdown.addEventListener("change", () => {
@@ -166,7 +159,15 @@ resetFilter.addEventListener("click", () => {
 });
 
 inputSearch.addEventListener("input", () => {
-    searchBlogs(inputSearch.value);
+    if (inputSearch.value.length >= 3) {
+        searchBlogs(inputSearch.value);
+    } else {
+        renderBlogs(blogs);
+    }
+});
+
+seeMore.addEventListener("click", () => {
+    seeMoreBlogs();
 });
 
 authAccess();

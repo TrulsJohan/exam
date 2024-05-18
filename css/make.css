@@ -68,11 +68,12 @@ h6 {
     gap: 24px;
 }
 
-.cancel-btn, .save-btn {
+.cancel-btn, .post-btn {
     height: 40px;
     width: 100%;
     font-weight: 700;
     font-size: 1rem;
+    cursor: pointer;
 }
 
 .cancel-btn  {
@@ -81,9 +82,12 @@ h6 {
     color: var(--primory200);
 }
 
-.save-btn {
+.cancel-btn-a {
+    width: 100%;
+}
+
+.post-btn {
     background-color: var(--primory200);
     border: none;
-    color: var(--surface900);
 }
 

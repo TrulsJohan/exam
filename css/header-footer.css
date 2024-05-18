@@ -13,6 +13,7 @@ nav {
     justify-content: center;
     align-items: center;
     gap: 12px;
+    display: none;
 }
 
 .logo {

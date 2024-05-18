@@ -1,11 +1,11 @@
-const profile = document.querySelector(`.profile`);
+const navContainer = document.querySelector(`.nav-container`);
 const inputTitle = document.querySelector(`.title-input`);
 const inputTags = document.querySelector(`.tags-input`);
 const inputContent = document.querySelector(`.content-input`);
 const inputImg = document.querySelector(`.img-input`);
 const deleteBtn = document.querySelector(`.delete-btn`);
 const saveBtn = document.querySelector(`.save-btn`);
-const cancelBtn = document.querySelector(`.cancel-btn`);
+const prevPage = document.querySelector(`.prev-page-container`);
 
 const queryString = window.location.search;
 const urlParam = new URLSearchParams(queryString);
@@ -25,12 +25,12 @@ function authAccess() {
             isFirstLoad = false;
         }
         if (authData.accessToken) {
-            profile.style.display = "block";
+            navContainer.style.display = "flex";
         } else {
-            profile.style.display = "none";
+            navContainer.style.display = "none";
         }
     } else {
-        profile.style.display = "none";
+        navContainer.style.display = "none";
     }
 }
 
@@ -67,7 +67,7 @@ function saveChanges (authData, dataBlog){
         body: JSON.stringify({
             title: inputTitle.value,
             body: inputContent.value,
-            tags: inputTags.value,
+            tags: [inputTags.value],
             media: {
                 url: inputImg.value,
             },
@@ -105,7 +105,7 @@ function deletePost (dataBlog, authData){
     })
     .then((result) => {
         console.log(result);
-        window.location.href = `index.html`;
+        window.location.href = `../index.html`;
     })
     .catch((error) => {
         console.error(`Error during authentication`, error);
@@ -115,7 +115,7 @@ function deletePost (dataBlog, authData){
 }
 
 saveBtn.addEventListener("click", () => saveChanges(authData, dataBlog));
-cancelBtn.addEventListener("click", ()=> window.location.href = `blog.html?id=${dataBlog.id}`);
+prevPage.addEventListener("click", ()=> window.location.href = `blog.html?id=${dataBlog.id}`);
 deleteBtn.addEventListener("click", ()=> deletePost(dataBlog, authData));
 
 authAccess();

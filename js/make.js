@@ -1,4 +1,3 @@
-const profile = document.querySelector(".profile");
 const postBtn = document.querySelector(".post-btn");
 const cancelBtn = document.querySelector(".cancel-btn");
 

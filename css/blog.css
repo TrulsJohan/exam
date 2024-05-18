@@ -34,6 +34,7 @@
     color: var(--surface50);
     padding-bottom: 4px;
     text-transform: uppercase;
+    word-break: break-all;
 }
 
 .blog-img {

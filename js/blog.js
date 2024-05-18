@@ -1,4 +1,4 @@
-const profile = document.querySelector(`.profile`);
+const navontainer = document.querySelector(`.nav-container`);
 const blogContainer = document.querySelector(`.blog-container`);
 const editPost = document.querySelector(`.edit-post`);
 
@@ -12,18 +12,12 @@ function authAccess() {
         const authData = JSON.parse(authDataString);
         fetchBlog(authData);
         if (authData.accessToken) {
-            profile.style.display = "block";
-            editPost.style.display = "block";
-            editPost.addEventListener('click', () => {
-                window.location.href = `edit.html?id=${idValue}`;
-            });
+            navontainer.style.display = "flex";
         } else {
-            profile.style.display = "none";
-            editPost.style.display = "none";
+            navontainer.style.display = "none";
         }
     } else {
-        profile.style.display = "none";
-        editPost.style.display = "none";
+        navontainer.style.display = "none";
     }
 }
 
