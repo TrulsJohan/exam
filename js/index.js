@@ -97,17 +97,26 @@ function renderBlogs(result) {
 
     nextBtn.addEventListener("click", () => {
         const carouselPosts = carouselContainer.querySelectorAll(".blog-post");
-        carouselPosts[0].style.display = `none`;
-        carouselContainer.appendChild(carouselPosts[0]);
-        carouselPosts[1].style.display = `block`;
+        carouselContainer.classList.add("dim");
+        setTimeout(() => {
+            carouselPosts[0].style.display = `none`;
+            carouselContainer.appendChild(carouselPosts[0]);
+            carouselPosts[1].style.display = `block`;
+            carouselContainer.classList.remove("dim");
+        }, 200);
     });
-
+    
     prevBtn.addEventListener("click", () => {
         const carouselPosts = carouselContainer.querySelectorAll(".blog-post");
-        carouselPosts[1].style.display = `none`;
-        carouselContainer.insertBefore(carouselPosts[carouselPosts.length - 1], carouselPosts[0]);
-        carouselPosts[0].style.display = `block`;
+        carouselContainer.classList.add("dim");
+        setTimeout(() => {
+            carouselPosts[1].style.display = `none`;
+            carouselContainer.insertBefore(carouselPosts[carouselPosts.length - 1], carouselPosts[0]);
+            carouselPosts[0].style.display = `block`;
+            carouselContainer.classList.remove("dim");
+        }, 200);
     });
+    
 }
 
 function filterBlogs(filterValue) {

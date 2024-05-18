@@ -123,6 +123,11 @@
     align-items: center;
 }
 
+.carousel.dim {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0.5;
+}
+
 .prev-next-bg {
     background-color: var(--primory200);
     position: absolute;
@@ -228,6 +233,4 @@
     background-color: transparent;
     color: var(--surface900);
 }
-
-
 
