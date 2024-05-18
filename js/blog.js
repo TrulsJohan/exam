@@ -46,8 +46,9 @@ function renderBlog(result) {
     blogContainer.innerHTML =
         `
         <div class="blog-content">
-            <p class="blog-updated">${dataBlog.updated}</p>
+            <p class="blog-author">${dataBlog.author.name}</p>
             <h6 class="blog-title">${dataBlog.title}</h6>
+            <p class="blog-updated">${dataBlog.updated}</p>
             <img class="blog-img" src="${dataBlog.media.url}" alt="${dataBlog.title}">
             <div class="img-edit-container">
                 <div class="group-img-container">
