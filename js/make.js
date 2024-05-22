@@ -1,8 +1,22 @@
 const postBtn = document.querySelector(".post-btn");
 const cancelBtn = document.querySelector(".cancel-btn");
+const navContainer = document.querySelector(`.nav-container`);
+
+function authAccess() {
+    const authDataString = localStorage.getItem('authData');
+    if (authDataString) {
+        const authData = JSON.parse(authDataString);
+        if (authData.accessToken) {
+            navContainer.style.display = "flex";
+        } else {
+            navContainer.style.display = "none";
+        }
+    } else {
+        navContainer.style.display = "none";
+    }
+}
 
 function post() {
-
     const authDataString = localStorage.getItem(`authData`);
     const authData = JSON.parse(authDataString);
 
@@ -39,4 +53,6 @@ function post() {
 };
 
 postBtn.addEventListener("click", post);
+
+authAccess();
 
