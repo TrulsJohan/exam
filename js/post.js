@@ -13,25 +13,8 @@ let tagsArray = [];
 let blogs = [];
 let displayedBlogCount = 6;
 
-function authAccess() {
-    const authDataString = localStorage.getItem('authData');
-    if (authDataString) {
-        const authData = JSON.parse(authDataString);
-        if (authData.accessToken) {
-            navContainer.style.display = "flex";
-        } else {
-            navContainer.style.display = "none";
-        }
-    } else {
-        navContainer.style.display = "none";
-    }
-}
-
 function fetchBlogs() {
-    const authDataString = localStorage.getItem(`authData`);
-    const authData = JSON.parse(authDataString);
-
-    fetch(`https://v2.api.noroff.dev/blog/posts/${authData.username}`)
+    fetch(`https://v2.api.noroff.dev/blog/posts/Truls_test`)
         .then((response) => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -197,10 +180,9 @@ seeMore.addEventListener("click", () => {
 });
 
 logOut.addEventListener("click", ()=> {
-    localStorage.clear();
+    localStorage.clear
     window.location.href = `../post.html`;
 })
 
-authAccess();
 fetchBlogs();
 
