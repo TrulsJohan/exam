@@ -36,7 +36,7 @@ function generateBlogHTML(post, isHidden = false) {
     const displayStyle = isHidden ? 'style="display: none;"' : '';
     return `
         <div class="blog-post" ${displayStyle} data-id="${post.id}">
-            <a href="blog.html?id=${post.id}">
+            <a href="user-blog.html?id=${post.id}">
                 <div class="img-container">
                     <img class="blog-img" src="${post.media.url}" alt="${post.title}">
                     <div class="title-container">
