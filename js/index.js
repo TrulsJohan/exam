@@ -198,7 +198,7 @@ seeMore.addEventListener("click", () => {
 
 logOut.addEventListener("click", ()=> {
     localStorage.clear();
-    window.location.href = `../post.html`;
+    window.location.href = `../user-index.html`;
 })
 
 authAccess();
