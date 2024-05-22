@@ -8,7 +8,7 @@ const nextBtn = document.querySelector(`.next`);
 const prevBtn = document.querySelector(`.prev`);
 const seeMore = document.querySelector(`.see-more-btn`);
 
-const tagsArray = [];
+let tagsArray = [];
 let blogs = [];
 let displayedBlogCount = 6;
 
@@ -65,14 +65,17 @@ function generateBlogHTML(post, isHidden = false) {
 }
 
 function renderBlogs(result) {
-    for (let index = 0; index < result.data.length; index++) {
-        if (!tagsArray.includes(result.data[index].tags)) {
-            tagsArray.push(result.data[index].tags);
+    for (let i = 0; i < result.data.length; i++) {
+        let tags = result.data[i].tags;
+        for (let j = 0; j < tags.length; j++) {
+            if (!tagsArray.includes(tags[j])) {
+                tagsArray.push(tags[j]);
+            }
         }
     }
     console.log(tagsArray);
-    for (let index = 0; index < tagsArray.length; index++) {
-        filterDropdown.innerHTML += `<option>${tagsArray[index]}</option>`
+    for (let i = 0; i < tagsArray.length; i++) {
+        filterDropdown.innerHTML += `<option>${tagsArray[i]}</option>`;
     }
 
     const latestPosts = result.data.slice(0, 3);
@@ -139,7 +142,19 @@ function searchBlogs(searchTerm) {
 function renderSearch(filteredBlogs) {
     blogsContainer.innerHTML = '';
     for (let index = 0; index < filteredBlogs.length; index++) {
-        blogsContainer.innerHTML += generateBlogHTML(filteredBlogs[index]);
+        blogsContainer.innerHTML += 
+        `
+        <div class="blog-post" data-id="${filteredBlogs[index].id}">
+            <a href="blog.html?id=${filteredBlogs[index].id}">
+                <div class="img-container">
+                    <img class="blog-img" src="${filteredBlogs[index].media.url}" alt="${filteredBlogs[index].title}">
+                    <div class="title-container">
+                        <p class="label-s blog-title">${filteredBlogs[index].title}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        `
     }
 }
 
@@ -167,9 +182,11 @@ resetFilter.addEventListener("click", () => {
 });
 
 inputSearch.addEventListener("input", () => {
-    if (inputSearch.value.length >= 3) {
+    if (inputSearch.value.length <= 3) {
         searchBlogs(inputSearch.value);
     } else {
+        carouselContainer.innerHTML = '';
+        blogsContainer.innerHTML = '';
         renderBlogs(blogs);
     }
 });
