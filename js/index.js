@@ -106,7 +106,7 @@ function renderBlogs(result) {
             carouselContainer.appendChild(carouselPosts[0]);
             carouselPosts[1].style.display = `block`;
             carouselContainer.classList.remove("dim");
-        }, 200);
+        }, 300);
     });
     
     prevBtn.addEventListener("click", () => {
@@ -117,7 +117,7 @@ function renderBlogs(result) {
             carouselContainer.insertBefore(carouselPosts[carouselPosts.length - 1], carouselPosts[0]);
             carouselPosts[0].style.display = `block`;
             carouselContainer.classList.remove("dim");
-        }, 200);
+        }, 300);
     });
     
 }
