@@ -143,7 +143,6 @@ function renderSearch(filteredBlogs) {
     }
 }
 
-// Function to handle the "see more" functionality
 function seeMoreBlogs() {
     const totalDisplayed = blogsContainer.children.length;
     const additionalBlogs = blogs.data.slice(totalDisplayed, totalDisplayed + 6); // Load 6 more blogs
