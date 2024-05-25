@@ -1,8 +1,16 @@
 @import "./primetives.css";
 @import "./header-footer.css";
 
+main {
+    background-color: var(--surface900);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .section-one {
     background-color: var(--surface900);
+    width: 320px;
 }
 
 .header-container {

@@ -1,9 +1,18 @@
 @import "./primetives.css";
 @import "./header-footer.css";
 
+main {
+    background-color: var(--surface900);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .section-one {
     background-color: var(--surface900);
     padding: 60px 24px 286px 24px;
+    width: 320px;
 }
 
 .sub-headline {
@@ -170,9 +179,18 @@
     text-transform: uppercase;
 }
 
+.section-six {
+    background-color: var(--surface50);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .search-container {
     display: flex;
     padding: 32px 24px 12px 24px;
+    width: 320px;
 }
 
 .searchbar {
@@ -216,7 +234,15 @@
 }
 
 .blogs-container {
-    padding: 24px 0 ;
+    padding: 24px 0;
+}
+
+.section-seven {
+    background-color: var(--surface50);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .see-more-container {
@@ -234,3 +260,21 @@
     color: var(--surface900);
 }
 
+@media (min-width: 320px) {
+}
+
+@media (min-width: 744px) {
+    .blogs-container {
+        display: grid;
+        grid-template-columns: 320px 320px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .blogs-container {
+        grid-template-columns: 320px 320px 320px;
+    }
+}
+
+@media (min-width: 1920px) {
+}
