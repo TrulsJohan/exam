@@ -1,6 +1,14 @@
 @import "./primetives.css";
 @import "./header-footer.css";
 
+main {
+    background-color: var(--surface900);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .section-one {
     background-color: var(--surface900);
 }
@@ -18,6 +26,7 @@
 
 .section-two {
     background-color: var(--surface900);
+    width: 320px;
 }
 
 .form-container {
@@ -85,5 +94,33 @@ h6 {
     background-color: var(--primory200);
     border: none;
     color: var(--surface900);
+}
+
+@media (min-width: 320px) {
+}
+
+@media (min-width: 744px) {
+    .section {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .section-two {
+        width: 480px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .section {
+        padding-left: 72px;
+        padding-right: 72px;
+    }
+
+    .section-two {
+        width: 600px;
+    }
+}
+
+@media (min-width: 1920px) {
 }
 

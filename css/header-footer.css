@@ -56,9 +56,17 @@ footer ul, li {
 }
 
 @media (min-width: 744px) {
+    nav {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
 }
 
 @media (min-width: 1280px) {
+    nav {
+        padding-left: 72px;
+        padding-right: 72px;
+    }
 }
 
 @media (min-width: 1920px) {

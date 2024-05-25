@@ -81,3 +81,31 @@
     color: var(--surface50);
 }
 
+@media (min-width: 320px) {
+}
+
+@media (min-width: 744px) {
+    .section-one, .section-two {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .blog-img {
+        height: 400px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .section-one, .section-two {
+        padding-left: 72px;
+        padding-right: 72px;
+    }
+
+    .blog-img {
+        height: 480px;
+    }
+}
+
+@media (min-width: 1920px) {
+}
+

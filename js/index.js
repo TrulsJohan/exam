@@ -188,6 +188,7 @@ inputSearch.addEventListener("input", () => {
     } else {
         carouselContainer.innerHTML = '';
         blogsContainer.innerHTML = '';
+        filterDropdown.innerHTML = ``;
         renderBlogs(blogs);
     }
 });

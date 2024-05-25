@@ -1,8 +1,17 @@
 @import "./primetives.css";
 @import "./header-footer.css";
 
+main {
+    background-color: var(--surface900);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .section-one {
     background-color: var(--surface900);
+    width: 320px;
+    padding-bottom: 80px;
 }
 
 .header-container {
@@ -67,17 +76,5 @@
 .register-link {
     padding-top: 1rem;
     color: var(--primory200);
-}
-
-@media (min-width: 320px) {
-}
-
-@media (min-width: 744px) {
-}
-
-@media (min-width: 1280px) {
-}
-
-@media (min-width: 1920px) {
 }
 
