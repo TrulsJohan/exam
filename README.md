@@ -6,6 +6,7 @@ The blogs consists of technology that will come in the future and
 also already in use tech. Its a way for users to stay updated on the
 latest home tech.
 
+
 ## Content
 
 ### Users
