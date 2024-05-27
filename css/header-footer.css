@@ -12,7 +12,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 12px;
+    gap: 16px;
     display: none;
 }
 
@@ -27,10 +27,13 @@ nav {
 }
 
 .new-post-btn {
-    width: 24px;
-    height: 24px;
-    border-radius: 100%;
     background-color: var(--primory200);
+    color: var(--surface900);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 12px 4px 4px;
+    font-weight: var(--bold);
 }
 
 .new-post-img {
