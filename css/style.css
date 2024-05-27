@@ -268,11 +268,39 @@ main {
         display: grid;
         grid-template-columns: 320px 320px;
     }
+
+    .carousel {
+        padding: 0 40px 32px 40px;
+    }
+
+    .blog-post {
+        width: 100%;
+    }
+
+    .blog-img {
+        height: 400px;
+    }
+
+    .prev-next-bg {
+        top: 200px;
+    }
 }
 
 @media (min-width: 1280px) {
     .blogs-container {
         grid-template-columns: 320px 320px 320px;
+    }
+
+    .carousel {
+        padding: 0 72px 32px 72px;
+    }
+
+    .blog-img {
+        height: 600px;
+    }
+
+    .prev-next-bg {
+        top: 300px;
     }
 }
 
