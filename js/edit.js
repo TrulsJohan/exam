@@ -6,6 +6,7 @@ const inputImg = document.querySelector(`.img-input`);
 const deleteBtn = document.querySelector(`.delete-btn`);
 const saveBtn = document.querySelector(`.save-btn`);
 const prevPage = document.querySelector(`.prev-page-container`);
+const logOut = document.querySelector(`.log-out`);
 
 const queryString = window.location.search;
 const urlParam = new URLSearchParams(queryString);
@@ -117,6 +118,11 @@ function deletePost (dataBlog, authData){
 saveBtn.addEventListener("click", () => saveChanges(authData, dataBlog));
 prevPage.addEventListener("click", ()=> window.location.href = `blog.html?id=${dataBlog.id}`);
 deleteBtn.addEventListener("click", ()=> deletePost(dataBlog, authData));
+
+logOut.addEventListener("click", ()=> {
+    localStorage.clear();
+    window.location.href = `../user-index.html`;
+})
 
 authAccess();
 

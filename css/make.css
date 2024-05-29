@@ -25,14 +25,20 @@ main {
 }
 
 .section-two {
-    background-color: var(--surface900);
-    width: 320px;
+    background-image: linear-gradient(var(--surface900), var(--surface800), var(--surface900));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .form-container {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     padding: 0 24px;
+    width: 320px;
 }
 
 h6 {
@@ -110,7 +116,7 @@ h6 {
         padding-right: 40px;
     }
 
-    .section-two {
+    .form-container {
         width: 480px;
     }
 }
@@ -121,7 +127,7 @@ h6 {
         padding-right: 72px;
     }
 
-    .section-two {
+    .form-container {
         width: 600px;
     }
 }
