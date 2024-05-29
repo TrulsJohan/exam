@@ -1,7 +1,6 @@
 const navontainer = document.querySelector(`.nav-container`);
 const blogContainer = document.querySelector(`.blog-container`);
 const editPost = document.querySelector(`.edit-post`);
-const logOut = document.querySelector(`.log-out`);
 
 const queryString = window.location.search;
 const urlParam = new URLSearchParams(queryString);
@@ -11,7 +10,6 @@ function authAccess() {
     const authDataString = localStorage.getItem('authData');
     if (authDataString) {
         const authData = JSON.parse(authDataString);
-        fetchBlog(authData);
         if (authData.accessToken) {
             navontainer.style.display = "flex";
         } else {
@@ -22,8 +20,8 @@ function authAccess() {
     }
 }
 
-function fetchBlog(authData) {
-    fetch(`https://v2.api.noroff.dev/blog/posts/${authData.username}`)
+function fetchBlog() {
+    fetch(`https://v2.api.noroff.dev/blog/posts/Truls_test`)
         .then((response) => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -63,22 +61,12 @@ function renderBlog(result) {
                     <img src="assets/img/group-eclipse.svg" alt="eclipse">
                     <img src="assets/img/group-eclipse.svg" alt="eclipse">
                 </div>
-                <a href="../edit.html?id=${dataBlog.id}">
-                    <div class="edit-container">
-                        <img src="assets/img/edit.svg" alt="edit">
-                        <p class="label-xs">Edit post</p>
-                    </div>
-                </a>
             </div>
             <p class="paragraph-s blog-body">${dataBlog.body}</p>
         </div>
         `
 }
 
-logOut.addEventListener("click", ()=> {
-    localStorage.clear();
-    window.location.href = `../user-index.html`;
-})
-
 authAccess();
+fetchBlog();
 

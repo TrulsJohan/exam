@@ -44,7 +44,7 @@ function post() {
     })
     .then((data) => {
         console.log(data);
-        window.location.href = `index.html`;
+        window.location.href = `admin-index.html`;
     })
     .catch((error) => {
         console.error('Error during authentication:', error);
@@ -57,7 +57,7 @@ postBtn.addEventListener("click", post);
 
 logOut.addEventListener("click", ()=> {
     localStorage.clear();
-    window.location.href = `../user-index.html`;
+    window.location.href = `../index.html`;
 })
 
 authAccess();

@@ -29,7 +29,7 @@ function login() {
         authData.accessToken = accessToken;
         authData.username = username;
         localStorage.setItem('authData', JSON.stringify(authData));
-        window.location.href = 'index.html';
+        window.location.href = 'admin-index.html';
     })
     .catch((error) => {
         console.error('Error during login:', error);

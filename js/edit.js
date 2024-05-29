@@ -82,7 +82,7 @@ function saveChanges (authData, dataBlog){
     })
     .then((data) => {
         console.log(data);
-        window.location.href = `blog.html?id=${dataBlog.id}`;
+        window.location.href = `admin-blog.html?id=${dataBlog.id}`;
     })
     .catch((error) => {
         console.error('Error during authentication:', error);
@@ -106,7 +106,7 @@ function deletePost (dataBlog, authData){
     })
     .then((result) => {
         console.log(result);
-        window.location.href = `../index.html`;
+        window.location.href = `../admin-index.html`;
     })
     .catch((error) => {
         console.error(`Error during authentication`, error);
@@ -116,12 +116,12 @@ function deletePost (dataBlog, authData){
 }
 
 saveBtn.addEventListener("click", () => saveChanges(authData, dataBlog));
-prevPage.addEventListener("click", ()=> window.location.href = `blog.html?id=${dataBlog.id}`);
+prevPage.addEventListener("click", ()=> window.location.href = `admin-blog.html?id=${dataBlog.id}`);
 deleteBtn.addEventListener("click", ()=> deletePost(dataBlog, authData));
 
 logOut.addEventListener("click", ()=> {
     localStorage.clear();
-    window.location.href = `../user-index.html`;
+    window.location.href = `../index.html`;
 })
 
 authAccess();
