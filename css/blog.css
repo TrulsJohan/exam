@@ -17,7 +17,7 @@
 }
 
 .section-two {
-    background-color: var(--surface900);
+    background-image: linear-gradient(var(--surface900), var(--surface800), var(--surface900));
     padding-bottom: 32px;
 }
 

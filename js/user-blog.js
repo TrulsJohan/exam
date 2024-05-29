@@ -41,13 +41,16 @@ function fetchBlog() {
 function renderBlog(result) {
     blogContainer.innerHTML = "";
     dataBlog = result.data.find(val => val.id === idValue);
+    let dateConverted = new Date(dataBlog.updated);
+    let options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+    let newDate = dateConverted.toLocaleDateString(undefined, options);
     console.log(dataBlog);
     blogContainer.innerHTML =
         `
         <div class="blog-content">
             <p class="blog-author">${dataBlog.author.name}</p>
             <h6 class="blog-title">${dataBlog.title}</h6>
-            <p class="blog-updated">${dataBlog.updated}</p>
+            <p class="blog-updated">${newDate}</p>
             <img class="blog-img" src="${dataBlog.media.url}" alt="${dataBlog.title}">
             <div class="img-edit-container">
                 <div class="group-img-container">

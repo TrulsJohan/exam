@@ -1,6 +1,7 @@
 const postBtn = document.querySelector(".post-btn");
 const cancelBtn = document.querySelector(".cancel-btn");
 const navContainer = document.querySelector(`.nav-container`);
+const logOut = document.querySelector(`.log-out`);
 
 function authAccess() {
     const authDataString = localStorage.getItem('authData');
@@ -53,6 +54,11 @@ function post() {
 };
 
 postBtn.addEventListener("click", post);
+
+logOut.addEventListener("click", ()=> {
+    localStorage.clear();
+    window.location.href = `../user-index.html`;
+})
 
 authAccess();
 
