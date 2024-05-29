@@ -13,8 +13,25 @@ let tagsArray = [];
 let blogs = [];
 let displayedBlogCount = 6;
 
+function authAccess() {
+    const authDataString = localStorage.getItem('authData');
+    if (authDataString) {
+        const authData = JSON.parse(authDataString);
+        if (authData.accessToken) {
+            navContainer.style.display = "flex";
+        } else {
+            navContainer.style.display = "none";
+        }
+    } else {
+        navContainer.style.display = "none";
+    }
+}
+
 function fetchBlogs() {
-    fetch(`https://v2.api.noroff.dev/blog/posts/Truls_test`)
+    const authDataString = localStorage.getItem(`authData`);
+    const authData = JSON.parse(authDataString);
+
+    fetch(`https://v2.api.noroff.dev/blog/posts/${authData.username}`)
         .then((response) => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -36,7 +53,7 @@ function generateBlogHTML(post, isHidden = false) {
     const displayStyle = isHidden ? 'style="display: none;"' : '';
     return `
         <div class="blog-post" ${displayStyle} data-id="${post.id}">
-            <a href="user-blog.html?id=${post.id}">
+            <a href="admin-blog.html?id=${post.id}">
                 <div class="img-container">
                     <img class="blog-img" src="${post.media.url}" alt="${post.title}">
                     <div class="title-container">
@@ -75,7 +92,7 @@ function renderBlogs(result) {
 
     const carouselPost = carouselContainer.querySelector(".blog-post");
     carouselPost.addEventListener("click", () => {
-        window.location.href = `blog.html?id=${carouselPost.dataset.id}`;
+        window.location.href = `admin-blog.html?id=${carouselPost.dataset.id}`;
     });
 
     remainingPosts.slice(0, displayedBlogCount).forEach((post) => {
@@ -129,7 +146,7 @@ function renderSearch(filteredBlogs) {
         blogsContainer.innerHTML += 
         `
         <div class="blog-post" data-id="${filteredBlogs[index].id}">
-            <a href="blog.html?id=${filteredBlogs[index].id}">
+            <a href="admin-blog.html?id=${filteredBlogs[index].id}">
                 <div class="img-container">
                     <img class="blog-img" src="${filteredBlogs[index].media.url}" alt="${filteredBlogs[index].title}">
                     <div class="title-container">
@@ -181,9 +198,10 @@ seeMore.addEventListener("click", () => {
 });
 
 logOut.addEventListener("click", ()=> {
-    localStorage.clear
-    window.location.href = `../post.html`;
+    localStorage.clear();
+    window.location.href = `../index.html`;
 })
 
+authAccess();
 fetchBlogs();
 
