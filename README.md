@@ -1,9 +1,9 @@
-<img width="1512" alt="Screenshot 2024-06-06 at 00 10 40" src="https://github.com/TrulsJohan/illuseum/assets/107504447/cedf5ec1-cf29-4808-bf39-450fd35c33e5">
+<img width="1007" alt="Screenshot 2024-06-06 at 00 45 12" src="https://github.com/TrulsJohan/techo/assets/107504447/4fc17185-c01f-415f-8d72-62d4124339c2">
 
 # TÈCHO
 
 Illuseum was a individual project given to us as Project Exam 1, during our Frontend Devolpmentlectures at Noroff School Of Technology And Digital Media.
-Illuseum is deployed [here](https://illuseum.netlify.app/).
+Illuseum is deployed [here](https://ticho.netlify.app/).
 
 
 ## Table of contents
@@ -44,8 +44,8 @@ edit.html - where admins can edit/delete old posts
 register.html - where client can make new admin accounts
 login.html - where admins can log in to their account
 
-<img width="1007" alt="Screenshot 2024-06-06 at 00 19 45" src="https://github.com/TrulsJohan/illuseum/assets/107504447/64c5cf70-c549-4af4-996b-eb4f1608bf42">
-  
+<img width="1007" alt="Screenshot 2024-06-06 at 00 46 05" src="https://github.com/TrulsJohan/techo/assets/107504447/661e982b-4792-463b-b738-690acf7cfc5d">
+
 
 ## Technical spesification
 
@@ -59,7 +59,7 @@ The website is responsive on mobile, tablet and desktop.
 
 ## Deployment
 
-The webiste is deployed with netlify [here](https://illuseum.netlify.app/).
+The webiste is deployed with netlify [here](https://ticho.netlify.app/).
 
 
 ## Developers
