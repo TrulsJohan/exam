@@ -33,24 +33,29 @@ latest home tech.
   
 ### Users
 - user-index.html
-  - where users can see the blog posts
-    
+  - where users can see the blog posts.
+  - search and filter the blogs.
+  - navigate to chosen blog posts.    
 - user-blog.html
-  - where users can get more inn depth details about the technology
+  - where users can get more inn depth details about the technology.
 
 ### Admin
 - index.html
-  - where admins can see all the posts
+  - where admins can see all the posts.
+  - search and filter the blogs.
+  - navigate to chosen blog posts.
+  - add new posts.
 - blog-html
-  - where admins can see all the content of each post
+  - where admins can see all the content of each post.
+  - can edit or delete chosen blog.
 - make.html
-  - where admins can add/make new posts
+  - where admins can add/make new posts.
 - edit.html
-  - where admins can edit/delete old posts
+  - where admins can edit/delete old posts.
 - register.html
-  - where client can make new admin accounts
+  - where client can register new admin accounts.
 - login.html
-  - where admins can log in to their account
+  - where admins can log in to their accounts.
 
 <img width="1007" alt="Screenshot 2024-06-06 at 00 46 05" src="https://github.com/TrulsJohan/techo/assets/107504447/661e982b-4792-463b-b738-690acf7cfc5d">
 
