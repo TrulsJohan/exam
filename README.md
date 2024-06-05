@@ -66,6 +66,7 @@ The website is responsive on mobile, tablet and desktop.
 
 - HTML
 - CSS
+- JS
 - Figma
 - Git
 
