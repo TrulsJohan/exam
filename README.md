@@ -69,6 +69,7 @@ The website is responsive on mobile, tablet and desktop.
 - JS
 - Figma
 - Git
+- Noroff API
 
 
 ## Deployment
