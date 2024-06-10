@@ -18,15 +18,15 @@ Técho is deployed [here](https://ticho.netlify.app/).
 ### Project Exam 1
 
 Project Exam 1, evolved around making a interactive blog website for a client.
-The projects objective was to reflect the skills and learnsett given during the frist semester at Noroff,
+The projects objective was to reflect the skills and learnsett given to us during the frist year at Noroff,
 as well as the student´s creativity, design prinicples, technical knowladge and project management and devolpment.
 
 ### Técho
 
 Técho is a blog website for future home technology.
 The blogs consists of technology that will come in the future and
-also already in use tech. Its a way for users to stay updated on the
-latest home tech.
+also already in-use-tech. Its a way for users to stay updated on the
+latest home technology.
 
 
 ## Features
@@ -70,6 +70,11 @@ The website is responsive on mobile, tablet and desktop.
 - Figma
 - Git
 - Noroff API
+
+
+## Acknowledgements
+
+For me, this project was a way to affirm that I could handle and give my own toughts and judgement on a more complpex task by my self. During most of this project, I didn´t have anyone around to give afformation I was on the rigth track, and really had to trust my own judgement. Offcourse I had some people giving me feedback, but not to the exstent that I had to reevaluate or change anything to a big exstent.
 
 
 ## Deployment
